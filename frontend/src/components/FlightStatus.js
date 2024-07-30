@@ -1,43 +1,3 @@
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import { Card, CardContent, Typography } from '@mui/material';
-
-// const FlightStatus = () => {
-//   const [flights, setFlights] = useState([]);
-//   const fetchFlights = async () => {
-//     const { data } = await axios.get('http://localhost:8000/api/flights');
-//     console.log(data,"sghj")
-//     setFlights(data);
-//   };
-//   useEffect(() => {
-//     fetchFlights();
-//   }, []);
-
-//   return (
-//     <div className="container mx-auto px-4">
-//       <h2 className="text-2xl font-bold mb-4">Flight Status</h2>
-//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-//         {flights.map(flight => (
-//           <Card key={flight._id} className="mb-4">
-//             <CardContent>
-//               <Typography variant="h5" component="div">
-//                 {flight.flightNumber}
-//               </Typography>
-//               <Typography color="text.secondary">
-//                 Status: {flight.status}
-//               </Typography>
-//               <Typography color="text.secondary">
-//                 Gate: {flight.gate}
-//               </Typography>
-//             </CardContent>
-//           </Card>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default FlightStatus;
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, CardContent, Typography } from '@mui/material';
@@ -46,7 +6,7 @@ const FlightStatus = () => {
   const [flights, setFlights] = useState([]);
 
   const fetchFlights = async () => {
-    const { data } = await axios.get('http://localhost:8000/api/flights');
+    const { data } = await axios.get('https://flightstatus.onrender.com/api/flights');
     setFlights(data);
   };
 

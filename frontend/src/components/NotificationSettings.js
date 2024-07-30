@@ -8,11 +8,11 @@ const NotificationSettings = () => {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post('http://localhost:8000/api/notifications', data);
+      await axios.post('https://flightstatus.onrender.com/api/notifications', data);
       alert('Notification sent successfully');
       reset(); 
 
-      
+
     } catch (error) {
       console.error('Error saving notification settings:', error);
       alert('Failed to send notification');
@@ -30,7 +30,7 @@ const NotificationSettings = () => {
           render={({ field }) => (
             <TextField
               {...field}
-              label="Flight Number"
+              label="Flight ID"
               variant="outlined"
               fullWidth
               className="mb-4"
